@@ -21,10 +21,10 @@
 @REM Maven Start Up Batch script
 @REM
 @REM Required ENV vars:
-@REM JAVA_主页 - location of a JDK 主页 dir
+@REM JAVA_疫情动态 - location of a JDK 疫情动态 dir
 @REM
 @REM Optional ENV vars
-@REM M2_主页 - location of maven2's installed 主页 dir
+@REM M2_疫情动态 - location of maven2's installed 疫情动态 dir
 @REM MAVEN_BATCH_ECHO - set to 'on' to enable the echoing of the batch commands
 @REM MAVEN_BATCH_PAUSE - set to 'on' to wait for a keystroke before ending
 @REM MAVEN_OPTS - parameters passed to the Java VM when running Maven
@@ -40,14 +40,14 @@ title %0
 @REM enable echoing by setting MAVEN_BATCH_ECHO to 'on'
 @if "%MAVEN_BATCH_ECHO%" == "on"  echo %MAVEN_BATCH_ECHO%
 
-@REM set %主页% to equivalent of $主页
-if "%主页%" == "" (set "主页=%主页DRIVE%%主页PATH%")
+@REM set %疫情动态% to equivalent of $疫情动态
+if "%疫情动态%" == "" (set "疫情动态=%疫情动态DRIVE%%疫情动态PATH%")
 
 @REM Execute a user defined script before this one
 if not "%MAVEN_SKIP_RC%" == "" goto skipRcPre
 @REM check for pre script, once with legacy .bat ending and once with .cmd ending
-if exist "%主页%\mavenrc_pre.bat" call "%主页%\mavenrc_pre.bat"
-if exist "%主页%\mavenrc_pre.cmd" call "%主页%\mavenrc_pre.cmd"
+if exist "%疫情动态%\mavenrc_pre.bat" call "%疫情动态%\mavenrc_pre.bat"
+if exist "%疫情动态%\mavenrc_pre.cmd" call "%疫情动态%\mavenrc_pre.cmd"
 :skipRcPre
 
 @setlocal
@@ -58,22 +58,22 @@ set ERROR_CODE=0
 @setlocal
 
 @REM ==== START VALIDATION ====
-if not "%JAVA_主页%" == "" goto OkJ主页
+if not "%JAVA_疫情动态%" == "" goto OkJ疫情动态
 
 echo.
-echo Error: JAVA_主页 not found in your environment. >&2
-echo Please set the JAVA_主页 variable in your environment to match the >&2
+echo Error: JAVA_疫情动态 not found in your environment. >&2
+echo Please set the JAVA_疫情动态 variable in your environment to match the >&2
 echo location of your Java installation. >&2
 echo.
 goto error
 
-:OkJ主页
-if exist "%JAVA_主页%\bin\java.exe" goto init
+:OkJ疫情动态
+if exist "%JAVA_疫情动态%\bin\java.exe" goto init
 
 echo.
-echo Error: JAVA_主页 is set to an invalid directory. >&2
-echo JAVA_主页 = "%JAVA_主页%" >&2
-echo Please set the JAVA_主页 variable in your environment to match the >&2
+echo Error: JAVA_疫情动态 is set to an invalid directory. >&2
+echo JAVA_疫情动态 = "%JAVA_疫情动态%" >&2
+echo Please set the JAVA_疫情动态 variable in your environment to match the >&2
 echo location of your Java installation. >&2
 echo.
 goto error
@@ -116,7 +116,7 @@ for /F "usebackq delims=" %%a in ("%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config") do s
 
 :endReadAdditionalConfig
 
-SET MAVEN_JAVA_EXE="%JAVA_主页%\bin\java.exe"
+SET MAVEN_JAVA_EXE="%JAVA_疫情动态%\bin\java.exe"
 set WRAPPER_JAR="%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.jar"
 set WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
 
@@ -170,8 +170,8 @@ set ERROR_CODE=1
 
 if not "%MAVEN_SKIP_RC%" == "" goto skipRcPost
 @REM check for post script, once with legacy .bat ending and once with .cmd ending
-if exist "%主页%\mavenrc_post.bat" call "%主页%\mavenrc_post.bat"
-if exist "%主页%\mavenrc_post.cmd" call "%主页%\mavenrc_post.cmd"
+if exist "%疫情动态%\mavenrc_post.bat" call "%疫情动态%\mavenrc_post.bat"
+if exist "%疫情动态%\mavenrc_post.cmd" call "%疫情动态%\mavenrc_post.cmd"
 :skipRcPost
 
 @REM pause the script if MAVEN_BATCH_PAUSE is set to 'on'

@@ -32,7 +32,7 @@ public class EmailController {
        System.out.println(map.get("add"));
        System.out.println(map.get("subject"));
        System.out.println(map.get("text"));
-       emailServer.sendTextMail("710761875@qq.com","sspusafe团队","我们已经收到了你的请求");
+       emailServer.sendTextMail("710761875@qq.com","sspusafe热点新闻","我们已经收到了你的请求");
 
 
 

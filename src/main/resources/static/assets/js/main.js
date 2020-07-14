@@ -149,15 +149,15 @@
 
   // Porfolio isotope and filter
   $(window).on('load', function() {
-    var portfolioIsotope = $('.portfolio-container').isotope({
+    var 防疫科普Isotope = $('.防疫科普-container').isotope({
       layoutMode: 'fitRows'
     });
 
-    $('#portfolio-flters li').on('click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
+    $('#防疫科普-flters li').on('click', function() {
+      $("#防疫科普-flters li").removeClass('filter-active');
       $(this).addClass('filter-active');
 
-      portfolioIsotope.isotope({
+      防疫科普Isotope.isotope({
         filter: $(this).data('filter')
       });
       aos_init();
@@ -165,8 +165,8 @@
 
   });
 
-  // Portfolio details carousel
-  $(".portfolio-details-carousel").owlCarousel({
+  // 防疫科普 details carousel
+  $(".防疫科普-details-carousel").owlCarousel({
     autoplay: true,
     dots: true,
     loop: true,

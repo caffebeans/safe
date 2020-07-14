@@ -23,11 +23,11 @@
 #
 # Required ENV vars:
 # ------------------
-#   JAVA_主页 - location of a JDK 主页 dir
+#   JAVA_疫情动态 - location of a JDK 疫情动态 dir
 #
 # Optional ENV vars
 # -----------------
-#   M2_主页 - location of maven2's installed 主页 dir
+#   M2_疫情动态 - location of maven2's installed 疫情动态 dir
 #   MAVEN_OPTS - parameters passed to the Java VM when running Maven
 #     e.g. to debug Maven itself, use
 #       set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
@@ -40,8 +40,8 @@ if [ -z "$MAVEN_SKIP_RC" ] ; then
     . /etc/mavenrc
   fi
 
-  if [ -f "$主页/.mavenrc" ] ; then
-    . "$主页/.mavenrc"
+  if [ -f "$疫情动态/.mavenrc" ] ; then
+    . "$疫情动态/.mavenrc"
   fi
 
 fi
@@ -54,26 +54,26 @@ case "`uname`" in
   CYGWIN*) cygwin=true ;;
   MINGW*) mingw=true;;
   Darwin*) darwin=true
-    # Use /usr/libexec/java_主页 if available, otherwise fall back to /Library/Java/主页
+    # Use /usr/libexec/java_疫情动态 if available, otherwise fall back to /Library/Java/疫情动态
     # See https://developer.apple.com/library/mac/qa/qa1170/_index.html
-    if [ -z "$JAVA_主页" ]; then
-      if [ -x "/usr/libexec/java_主页" ]; then
-        export JAVA_主页="`/usr/libexec/java_主页`"
+    if [ -z "$JAVA_疫情动态" ]; then
+      if [ -x "/usr/libexec/java_疫情动态" ]; then
+        export JAVA_疫情动态="`/usr/libexec/java_疫情动态`"
       else
-        export JAVA_主页="/Library/Java/主页"
+        export JAVA_疫情动态="/Library/Java/疫情动态"
       fi
     fi
     ;;
 esac
 
-if [ -z "$JAVA_主页" ] ; then
+if [ -z "$JAVA_疫情动态" ] ; then
   if [ -r /etc/gentoo-release ] ; then
-    JAVA_主页=`java-config --jre-主页`
+    JAVA_疫情动态=`java-config --jre-疫情动态`
   fi
 fi
 
-if [ -z "$M2_主页" ] ; then
-  ## resolve links - $0 may be a link to maven's 主页
+if [ -z "$M2_疫情动态" ] ; then
+  ## resolve links - $0 may be a link to maven's 疫情动态
   PRG="$0"
 
   # need this for relative symlinks
@@ -89,60 +89,60 @@ if [ -z "$M2_主页" ] ; then
 
   saveddir=`pwd`
 
-  M2_主页=`dirname "$PRG"`/..
+  M2_疫情动态=`dirname "$PRG"`/..
 
   # make it fully qualified
-  M2_主页=`cd "$M2_主页" && pwd`
+  M2_疫情动态=`cd "$M2_疫情动态" && pwd`
 
   cd "$saveddir"
-  # echo Using m2 at $M2_主页
+  # echo Using m2 at $M2_疫情动态
 fi
 
 # For Cygwin, ensure paths are in UNIX format before anything is touched
 if $cygwin ; then
-  [ -n "$M2_主页" ] &&
-    M2_主页=`cygpath --unix "$M2_主页"`
-  [ -n "$JAVA_主页" ] &&
-    JAVA_主页=`cygpath --unix "$JAVA_主页"`
+  [ -n "$M2_疫情动态" ] &&
+    M2_疫情动态=`cygpath --unix "$M2_疫情动态"`
+  [ -n "$JAVA_疫情动态" ] &&
+    JAVA_疫情动态=`cygpath --unix "$JAVA_疫情动态"`
   [ -n "$CLASSPATH" ] &&
     CLASSPATH=`cygpath --path --unix "$CLASSPATH"`
 fi
 
 # For Mingw, ensure paths are in UNIX format before anything is touched
 if $mingw ; then
-  [ -n "$M2_主页" ] &&
-    M2_主页="`(cd "$M2_主页"; pwd)`"
-  [ -n "$JAVA_主页" ] &&
-    JAVA_主页="`(cd "$JAVA_主页"; pwd)`"
+  [ -n "$M2_疫情动态" ] &&
+    M2_疫情动态="`(cd "$M2_疫情动态"; pwd)`"
+  [ -n "$JAVA_疫情动态" ] &&
+    JAVA_疫情动态="`(cd "$JAVA_疫情动态"; pwd)`"
 fi
 
-if [ -z "$JAVA_主页" ]; then
+if [ -z "$JAVA_疫情动态" ]; then
   javaExecutable="`which javac`"
   if [ -n "$javaExecutable" ] && ! [ "`expr \"$javaExecutable\" : '\([^ ]*\)'`" = "no" ]; then
     # readlink(1) is not available as standard on Solaris 10.
     readLink=`which readlink`
     if [ ! `expr "$readLink" : '\([^ ]*\)'` = "no" ]; then
       if $darwin ; then
-        java主页="`dirname \"$javaExecutable\"`"
-        javaExecutable="`cd \"$java主页\" && pwd -P`/javac"
+        java疫情动态="`dirname \"$javaExecutable\"`"
+        javaExecutable="`cd \"$java疫情动态\" && pwd -P`/javac"
       else
         javaExecutable="`readlink -f \"$javaExecutable\"`"
       fi
-      java主页="`dirname \"$javaExecutable\"`"
-      java主页=`expr "$java主页" : '\(.*\)/bin'`
-      JAVA_主页="$java主页"
-      export JAVA_主页
+      java疫情动态="`dirname \"$javaExecutable\"`"
+      java疫情动态=`expr "$java疫情动态" : '\(.*\)/bin'`
+      JAVA_疫情动态="$java疫情动态"
+      export JAVA_疫情动态
     fi
   fi
 fi
 
 if [ -z "$JAVACMD" ] ; then
-  if [ -n "$JAVA_主页"  ] ; then
-    if [ -x "$JAVA_主页/jre/sh/java" ] ; then
+  if [ -n "$JAVA_疫情动态"  ] ; then
+    if [ -x "$JAVA_疫情动态/jre/sh/java" ] ; then
       # IBM's JDK on AIX uses strange locations for the executables
-      JAVACMD="$JAVA_主页/jre/sh/java"
+      JAVACMD="$JAVA_疫情动态/jre/sh/java"
     else
-      JAVACMD="$JAVA_主页/bin/java"
+      JAVACMD="$JAVA_疫情动态/bin/java"
     fi
   else
     JAVACMD="`which java`"
@@ -150,13 +150,13 @@ if [ -z "$JAVACMD" ] ; then
 fi
 
 if [ ! -x "$JAVACMD" ] ; then
-  echo "Error: JAVA_主页 is not defined correctly." >&2
+  echo "Error: JAVA_疫情动态 is not defined correctly." >&2
   echo "  We cannot execute $JAVACMD" >&2
   exit 1
 fi
 
-if [ -z "$JAVA_主页" ] ; then
-  echo "Warning: JAVA_主页 environment variable is not set."
+if [ -z "$JAVA_疫情动态" ] ; then
+  echo "Warning: JAVA_疫情动态 environment variable is not set."
 fi
 
 CLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher
@@ -262,14 +262,14 @@ else
                   echo " - Compiling MavenWrapperDownloader.java ..."
                 fi
                 # Compiling the Java class
-                ("$JAVA_主页/bin/javac" "$javaClass")
+                ("$JAVA_疫情动态/bin/javac" "$javaClass")
             fi
             if [ -e "$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.class" ]; then
                 # Running the downloader
                 if [ "$MVNW_VERBOSE" = true ]; then
                   echo " - Running MavenWrapperDownloader.java ..."
                 fi
-                ("$JAVA_主页/bin/java" -cp .mvn/wrapper MavenWrapperDownloader "$MAVEN_PROJECTBASEDIR")
+                ("$JAVA_疫情动态/bin/java" -cp .mvn/wrapper MavenWrapperDownloader "$MAVEN_PROJECTBASEDIR")
             fi
         fi
     fi
@@ -286,10 +286,10 @@ MAVEN_OPTS="$(concat_lines "$MAVEN_PROJECTBASEDIR/.mvn/jvm.config") $MAVEN_OPTS"
 
 # For Cygwin, switch paths to Windows format before running java
 if $cygwin; then
-  [ -n "$M2_主页" ] &&
-    M2_主页=`cygpath --path --windows "$M2_主页"`
-  [ -n "$JAVA_主页" ] &&
-    JAVA_主页=`cygpath --path --windows "$JAVA_主页"`
+  [ -n "$M2_疫情动态" ] &&
+    M2_疫情动态=`cygpath --path --windows "$M2_疫情动态"`
+  [ -n "$JAVA_疫情动态" ] &&
+    JAVA_疫情动态=`cygpath --path --windows "$JAVA_疫情动态"`
   [ -n "$CLASSPATH" ] &&
     CLASSPATH=`cygpath --path --windows "$CLASSPATH"`
   [ -n "$MAVEN_PROJECTBASEDIR" ] &&
@@ -306,5 +306,5 @@ WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
 exec "$JAVACMD" \
   $MAVEN_OPTS \
   -classpath "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.jar" \
-  "-Dmaven.主页=${M2_主页}" "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
+  "-Dmaven.疫情动态=${M2_疫情动态}" "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
   ${WRAPPER_LAUNCHER} $MAVEN_CONFIG "$@"

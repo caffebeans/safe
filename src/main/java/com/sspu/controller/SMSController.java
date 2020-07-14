@@ -28,8 +28,8 @@ public class SMSController {
 
     @RequestMapping("/send")
     public  void testSendTemplateSMS() {
-        String accesskeyId = "";
-        String accessKeySecret="";
+        String accesskeyId = "LTAI22CJovm4GdPD";
+        String accessKeySecret="ZPGVDjqcWLmBaOpTXnkvSuAroCQbAw";
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou",accesskeyId , accessKeySecret);
         IAcsClient client = new DefaultAcsClient(profile);
         CommonRequest request = new CommonRequest();
@@ -38,7 +38,7 @@ public class SMSController {
         request.setSysVersion("2017-05-25");
         request.setSysAction("SendSms");
         request.putQueryParameter("RegionId", "cn-hangzhou");
-        request.putQueryParameter("PhoneNumbers", "18298128265");
+        request.putQueryParameter("PhoneNumbers", "13067456623");
         request.putQueryParameter("SignName", "校园防疫");
         request.putQueryParameter("TemplateCode", "SMS_175581900");
         request.putQueryParameter("TemplateParam", "{\"code\":\"123456\"}");

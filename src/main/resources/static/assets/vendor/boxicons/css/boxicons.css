@@ -1249,7 +1249,7 @@
 .bx-camera:before {
   content: "\e9f1";
 }
-.bx-camera-主页:before {
+.bx-camera-疫情动态:before {
   content: "\e9f2";
 }
 .bx-camera-movie:before {
@@ -1957,19 +1957,19 @@
 .bx-hive:before {
   content: "\eadd";
 }
-.bx-主页:before {
+.bx-疫情动态:before {
   content: "\eade";
 }
-.bx-主页-alt:before {
+.bx-疫情动态-alt:before {
   content: "\eadf";
 }
-.bx-主页-circle:before {
+.bx-疫情动态-circle:before {
   content: "\eae0";
 }
-.bx-主页-heart:before {
+.bx-疫情动态-heart:before {
   content: "\eae1";
 }
-.bx-主页-smile:before {
+.bx-疫情动态-smile:before {
   content: "\eae2";
 }
 .bx-horizontal-center:before {
@@ -2818,7 +2818,7 @@
 .bx-table:before {
   content: "\ebfc";
 }
-.bx-tac主页ter:before {
+.bx-tac疫情动态ter:before {
   content: "\ebfd";
 }
 .bx-tag:before {
@@ -3412,7 +3412,7 @@
 .bxs-camera:before {
   content: "\ecc2";
 }
-.bxs-camera-主页:before {
+.bxs-camera-疫情动态:before {
   content: "\ecc3";
 }
 .bxs-camera-movie:before {
@@ -4054,16 +4054,16 @@
 .bxs-hide:before {
   content: "\ed98";
 }
-.bxs-主页:before {
+.bxs-疫情动态:before {
   content: "\ed99";
 }
-.bxs-主页-circle:before {
+.bxs-疫情动态-circle:before {
   content: "\ed9a";
 }
-.bxs-主页-heart:before {
+.bxs-疫情动态-heart:before {
   content: "\ed9b";
 }
-.bxs-主页-smile:before {
+.bxs-疫情动态-smile:before {
   content: "\ed9c";
 }
 .bxs-hot:before {
@@ -4693,7 +4693,7 @@
 .bxs-sun:before {
   content: "\ee6d";
 }
-.bxs-tac主页ter:before {
+.bxs-tac疫情动态ter:before {
   content: "\ee6e";
 }
 .bxs-tag:before {
