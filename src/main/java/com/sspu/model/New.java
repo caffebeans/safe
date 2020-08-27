@@ -14,15 +14,18 @@ import java.sql.Time;
 @Data
 public class New {
 
-     private Integer id;
-     private String title;
-     private String author;
-     private String time;
-     private Integer comments;
-     private String text;
-     private String content;
-     private String type;
-     private Integer alive;
+     private Integer  id;
+     private String   title;
+     private String   author;
+     private String   time;
+     private Integer  comments;
+     private String   text;
+     private String   content;
+     private String   url;
+     private String   type;
+     private String   from;
+     private Integer  alive;
+
 
 
 

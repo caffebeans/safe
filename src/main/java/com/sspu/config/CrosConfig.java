@@ -1,0 +1,28 @@
+package com.sspu.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+/**
+ * @des:
+ * @author: zhangliang
+ * @create: 2020-08-06 16:49
+ **/
+
+
+
+@Configuration
+public class CrosConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                //是否发送Cookie
+                .allowCredentials(true)
+                //放行哪些原始域
+                .allowedOrigins("*")
+                .allowedMethods(new String[]{"GET", "POST", "PUT", "DELETE"})
+                .allowedHeaders("*");
+
+    }
+}

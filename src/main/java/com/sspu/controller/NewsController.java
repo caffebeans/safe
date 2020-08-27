@@ -1,8 +1,7 @@
 package com.sspu.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.sspu.model.New;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +13,7 @@ import java.util.List;
  **/
 
 
-@RestController
+@RestController("news")
 @CrossOrigin
 public class NewsController {
 
@@ -37,5 +36,13 @@ public class NewsController {
      }
 
 
+      @RequestMapping("add")
+      @ResponseBody
+      Object add(@RequestBody New news){
+
+        System.out.println(news.getAuthor());
+
+        return null;
+      }
 
 }
