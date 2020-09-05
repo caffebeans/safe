@@ -14,11 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class IndexController {
 
-         @RequestMapping("/")
-         String index(){
-             log.info("获取主页");
-             return "index";
-         }
 
 
 }

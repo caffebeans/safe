@@ -1,4 +1,4 @@
-package com.sspu.wechart.controller;
+package com.sspu.wechart;
 
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.mp.api.WxMpService;

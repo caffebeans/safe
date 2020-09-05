@@ -16,8 +16,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @create: 2020-09-05 22:36
  **/
 
-@Configuration
+
 @Slf4j
+
 public class LoginInterceptorConfig implements WebMvcConfigurer {
 
 
@@ -30,7 +31,10 @@ public class LoginInterceptorConfig implements WebMvcConfigurer {
             log.info("开始进行登陆拦截");
             registry.addInterceptor((HandlerInterceptor) loginInterceptor).addPathPatterns("/**")
                     .excludePathPatterns("/")
+                    .excludePathPatterns("/templates")
+                    .excludePathPatterns("/**.html")
                     .excludePathPatterns("/assets/**")
+                    .excludePathPatterns("/wx/**")
                     .excludePathPatterns("/admin/login");
 
     }
