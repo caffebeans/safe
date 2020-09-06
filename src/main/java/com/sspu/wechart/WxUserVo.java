@@ -11,7 +11,7 @@ import java.util.List;
  **/
 
 @Data
-public class WxUser {
+public class WxUserVo {
 
     private String subscribe;//	用户是否订阅该公众号标识，值为0时，代表此用户没有关注该公众号，拉取不到其余信息。
     private String openid;//	用户的标识，对当前公众号唯一
@@ -22,4 +22,5 @@ public class WxUser {
     private String province;//	用户所在省份
     private String language;//	用户的语言，简体中文为zh_CN
     private List<String> tagid_list;//用户被打上的标签ID列表
+
 }

@@ -19,19 +19,21 @@ public class ResultVO<T> {
 
          public  Object sucesss(Object data){
              code=200;
+             this.setMessage("ok");
              this.data= (T) data;
              return this;
+         }
+
+         public  Object sucesss(int code){
+             code=code;
+             this.msg="操作失败";
+            this.data= (T) null;
+            return this;
          }
 
          public  Object setMessage(String message){
           msg=message;
           return this;
          }
-
-
-
-
-
-
 
 }

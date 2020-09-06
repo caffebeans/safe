@@ -1,7 +1,6 @@
 package com.sspu.wechart.controller;
 
 import com.sspu.vo.ResultVO;
-import com.sspu.wechart.WxUser;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.service.WxService;
 import me.chanjar.weixin.mp.api.WxMpService;
