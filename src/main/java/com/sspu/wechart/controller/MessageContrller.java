@@ -9,10 +9,8 @@ import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.kefu.WxMpKefuMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -76,6 +74,10 @@ public class MessageContrller {
 
     @PostMapping("/sendText")
     String sendMessage(@RequestBody Map<String,String> map) throws Exception{
+
+         System.out.println("----");
+         System.out.println(map.get("openId"));
+         System.out.println(map.get("content"));
 
         mpService.getKefuService().sendKefuMessage(
                 WxMpKefuMessage

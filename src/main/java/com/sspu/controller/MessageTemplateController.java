@@ -39,7 +39,7 @@ public class MessageTemplateController {
         System.out.println("获取模板消息");
         ResultVO resultVO = new ResultVO();
         try{
-            List<MessageTemplate> list = templateService.findByAll();
+            List<MessageTemplate> list = templateService.findAll();
             resultVO.setData(list);
             resultVO.setCode(200);
             resultVO.setMsg("successful");

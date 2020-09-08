@@ -14,7 +14,6 @@ import me.chanjar.weixin.mp.bean.result.WxMpUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.sound.sampled.Line;
 import java.util.Map;
 
 /**
@@ -25,7 +24,7 @@ import java.util.Map;
 public class SubscribeHandler extends AbstractHandler {
 
       @Autowired
-      WxUserVoService WxUserVoService;
+      com.sspu.wechart.service.WxUserVoService WxUserVoService;
 
     @Override
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage,
@@ -84,6 +83,7 @@ public class SubscribeHandler extends AbstractHandler {
      */
     private WxMpXmlOutMessage handleSpecial(WxMpXmlMessage wxMessage)
         throws Exception {
+
         //TODO
         return null;
     }

@@ -1,7 +1,6 @@
 package com.sspu.wechart.handler;
 
 import com.sspu.wechart.service.WxUserVoService;
-import com.sspu.wechart.vo.WxUserVo;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;

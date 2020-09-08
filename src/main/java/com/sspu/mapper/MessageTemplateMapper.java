@@ -8,8 +8,6 @@ import java.util.List;
 @Mapper
 public interface MessageTemplateMapper {
 
-      List<MessageTemplate> findByAll();
-
     int deleteByPrimaryKey(Integer id);
 
     int insert(MessageTemplate record);
@@ -21,4 +19,8 @@ public interface MessageTemplateMapper {
     int updateByPrimaryKeySelective(MessageTemplate record);
 
     int updateByPrimaryKey(MessageTemplate record);
+
+    List<MessageTemplate> findAll();
+
+    List<MessageTemplate> findByAll();
 }

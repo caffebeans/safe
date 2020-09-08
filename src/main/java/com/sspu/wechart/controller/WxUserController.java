@@ -4,12 +4,10 @@ import com.sspu.vo.ResultVO;
 import com.sspu.wechart.service.WxUserVoService;
 import com.sspu.wechart.vo.WxUserVo;
 import lombok.extern.slf4j.Slf4j;
-import me.chanjar.weixin.common.service.WxService;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.result.WxMpUser;
 import me.chanjar.weixin.mp.bean.result.WxMpUserList;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,7 +43,7 @@ public class WxUserController {
            ResultVO resultVO = new ResultVO();
            System.out.println("查询本地数据库所有用户记消息");
      try{
-         List<WxUserVo> list = wxUserVoService.findAll();
+         List<WxUserVo> list = wxUserVoService.find();
          System.out.println("ddddd");
          System.out.println(list.size());
          if (null!=list){
