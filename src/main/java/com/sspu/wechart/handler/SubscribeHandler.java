@@ -2,35 +2,55 @@ package com.sspu.wechart.handler;
 
 
 import com.sspu.wechart.builder.TextBuilder;
+import com.sspu.wechart.service.WxUserVoService;
+import com.sspu.wechart.vo.WxUserVo;
+import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import me.chanjar.weixin.mp.bean.result.WxMpUser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.sound.sampled.Line;
 import java.util.Map;
 
 /**
  * @author Binary Wang(https://github.com/binarywang)
  */
 @Component
+@Slf4j
 public class SubscribeHandler extends AbstractHandler {
+
+      @Autowired
+      WxUserVoService WxUserVoService;
 
     @Override
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage,
                                     Map<String, Object> context, WxMpService weixinService,
                                     WxSessionManager sessionManager) throws WxErrorException {
 
-        this.logger.info("新关注用户 OPENID: " + wxMessage.getFromUser());
 
+
+        log.info("新关注用户 OPENID: " + wxMessage.getFromUser());
         // 获取微信用户基本信息
         try {
             WxMpUser userWxInfo = weixinService.getUserService()
                 .userInfo(wxMessage.getFromUser(), null);
             if (userWxInfo != null) {
-                // TODO 可以添加关注用户到本地数据库
+                log.info("------------将新用户写进数据库---------------");
+
+                WxUserVo wxUserVo = new WxUserVo();
+                wxUserVo.buildFromWxUserVo(userWxInfo);
+
+                log.info(userWxInfo.toString());
+                WxUserVoService.insertSelective(wxUserVo);
+
+
+                log.info("-------------------------");
+
             }
         } catch (WxErrorException e) {
             if (e.getError().getErrorCode() == 48001) {
@@ -51,7 +71,7 @@ public class SubscribeHandler extends AbstractHandler {
         }
 
         try {
-            return new TextBuilder().build("感谢关注", wxMessage, weixinService);
+            return new TextBuilder().build("感谢你的关注", wxMessage, weixinService);
         } catch (Exception e) {
             this.logger.error(e.getMessage(), e);
         }

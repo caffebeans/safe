@@ -2,17 +2,18 @@ package com.sspu.wechart.controller;
 
 import com.sspu.model.MessageTemplate;
 import com.sspu.model.WxMessage;
+import com.sspu.service.MessageTemplateService;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.kefu.WxMpKefuMessage;
-import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @des:
@@ -34,6 +35,8 @@ public class MessageContrller {
      @Autowired
      private  WxMpMessageRouter messageRouter;
 
+     @Autowired
+     private MessageTemplateService messageTemplateService;
 
 
     @PostMapping( "/{appid}")
@@ -49,41 +52,42 @@ public class MessageContrller {
 
      }
 
-     @RequestMapping("/sendMessage")
-     String sendMessage() throws Exception{
+     @PostMapping("/sendMessageFromTemplate")
+     String sendMessageFromTemplate(@RequestBody Map<String,String> map) throws Exception{
 
-         log.info("进行日报");
+         log.info("处理数据");
+         String tempId=map.get("tempId");
+         Integer integer = new Integer(tempId);
+         int i = integer.intValue();
+
+         MessageTemplate messageTemplate = messageTemplateService.selectByPrimaryKey(i);
+         String msg=messageTemplate.getContent().replace("${data}",map.get("toUser"));
+
          mpService.getKefuService().sendKefuMessage(
                  WxMpKefuMessage
                          .TEXT()
-                         .toUser("oOqJd6M6M_zOdOFNSzHVrnHdAORM")
-                         .content("你是张")
+                         .toUser(map.get("openId"))
+                         .content(msg)
                          .build()
          );
-
-
-
 
          return "ok";
      }
 
-    @RequestMapping("/sendMessages")
-    String sendMessage(MessageTemplate messageTemplate, List openId) throws Exception{
-
-        log.info("进行日报");
-
-
-
+    @PostMapping("/sendText")
+    String sendMessage(@RequestBody Map<String,String> map) throws Exception{
 
         mpService.getKefuService().sendKefuMessage(
                 WxMpKefuMessage
                         .TEXT()
-                        .toUser("")
-                        .content(messageTemplate.getContent())
+                        .toUser(map.get("openId"))
+                        .content(map.get("content"))
                         .build()
         );
+
         return "ok";
     }
+
 
 
 

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sspu.wechart.mapper.WxUserVoMapper">
+  <resultMap id="BaseResultMap" type="com.sspu.wechart.vo.WxUserVo">
+    <!--@mbg.generated-->
+    <!--@Table wx_user_vo-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="student_id" jdbcType="VARCHAR" property="studentId" />
+    <result column="iphone" jdbcType="VARCHAR" property="iphone" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="subscribe" jdbcType="TINYINT" property="subscribe" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="sex_desc" jdbcType="VARCHAR" property="sexDesc" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="language" jdbcType="VARCHAR" property="language" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="head_img_url" jdbcType="VARCHAR" property="headImgUrl" />
+    <result column="subscribe_time" jdbcType="BIGINT" property="subscribeTime" />
+    <result column="union_id" jdbcType="VARCHAR" property="unionId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="group_id" jdbcType="INTEGER" property="groupId" />
+    <result column="subscribe_scene" jdbcType="VARCHAR" property="subscribeScene" />
+    <result column="qr_scene" jdbcType="VARCHAR" property="qrScene" />
+    <result column="qr_scene_str" jdbcType="VARCHAR" property="qrSceneStr" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, student_id, iphone, `name`, subscribe, open_id, nickname, sex_desc, sex, `language`, 
+    city, province, country, head_img_url, subscribe_time, union_id, remark, group_id, 
+    subscribe_scene, qr_scene, qr_scene_str
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from wx_user_vo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from wx_user_vo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.sspu.wechart.vo.WxUserVo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into wx_user_vo (student_id, iphone, `name`, 
+      subscribe, open_id, nickname, 
+      sex_desc, sex, `language`, 
+      city, province, country, 
+      head_img_url, subscribe_time, union_id, 
+      remark, group_id, subscribe_scene, 
+      qr_scene, qr_scene_str)
+    values (#{studentId,jdbcType=VARCHAR}, #{iphone,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{subscribe,jdbcType=TINYINT}, #{openId,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{sexDesc,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{language,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, 
+      #{headImgUrl,jdbcType=VARCHAR}, #{subscribeTime,jdbcType=BIGINT}, #{unionId,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{groupId,jdbcType=INTEGER}, #{subscribeScene,jdbcType=VARCHAR}, 
+      #{qrScene,jdbcType=VARCHAR}, #{qrSceneStr,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.sspu.wechart.vo.WxUserVo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into wx_user_vo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="iphone != null">
+        iphone,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="subscribe != null">
+        subscribe,
+      </if>
+      <if test="openId != null">
+        open_id,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="sexDesc != null">
+        sex_desc,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="language != null">
+        `language`,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="country != null">
+        country,
+      </if>
+      <if test="headImgUrl != null">
+        head_img_url,
+      </if>
+      <if test="subscribeTime != null">
+        subscribe_time,
+      </if>
+      <if test="unionId != null">
+        union_id,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="groupId != null">
+        group_id,
+      </if>
+      <if test="subscribeScene != null">
+        subscribe_scene,
+      </if>
+      <if test="qrScene != null">
+        qr_scene,
+      </if>
+      <if test="qrSceneStr != null">
+        qr_scene_str,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="studentId != null">
+        #{studentId,jdbcType=VARCHAR},
+      </if>
+      <if test="iphone != null">
+        #{iphone,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="subscribe != null">
+        #{subscribe,jdbcType=TINYINT},
+      </if>
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="sexDesc != null">
+        #{sexDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="language != null">
+        #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="headImgUrl != null">
+        #{headImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="subscribeTime != null">
+        #{subscribeTime,jdbcType=BIGINT},
+      </if>
+      <if test="unionId != null">
+        #{unionId,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null">
+        #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="subscribeScene != null">
+        #{subscribeScene,jdbcType=VARCHAR},
+      </if>
+      <if test="qrScene != null">
+        #{qrScene,jdbcType=VARCHAR},
+      </if>
+      <if test="qrSceneStr != null">
+        #{qrSceneStr,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sspu.wechart.vo.WxUserVo">
+    <!--@mbg.generated-->
+    update wx_user_vo
+    <set>
+      <if test="studentId != null">
+        student_id = #{studentId,jdbcType=VARCHAR},
+      </if>
+      <if test="iphone != null">
+        iphone = #{iphone,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="subscribe != null">
+        subscribe = #{subscribe,jdbcType=TINYINT},
+      </if>
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="sexDesc != null">
+        sex_desc = #{sexDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="language != null">
+        `language` = #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="headImgUrl != null">
+        head_img_url = #{headImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="subscribeTime != null">
+        subscribe_time = #{subscribeTime,jdbcType=BIGINT},
+      </if>
+      <if test="unionId != null">
+        union_id = #{unionId,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null">
+        group_id = #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="subscribeScene != null">
+        subscribe_scene = #{subscribeScene,jdbcType=VARCHAR},
+      </if>
+      <if test="qrScene != null">
+        qr_scene = #{qrScene,jdbcType=VARCHAR},
+      </if>
+      <if test="qrSceneStr != null">
+        qr_scene_str = #{qrSceneStr,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sspu.wechart.vo.WxUserVo">
+    <!--@mbg.generated-->
+    update wx_user_vo
+    set student_id = #{studentId,jdbcType=VARCHAR},
+      iphone = #{iphone,jdbcType=VARCHAR},
+      `name` = #{name,jdbcType=VARCHAR},
+      subscribe = #{subscribe,jdbcType=TINYINT},
+      open_id = #{openId,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      sex_desc = #{sexDesc,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      `language` = #{language,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      head_img_url = #{headImgUrl,jdbcType=VARCHAR},
+      subscribe_time = #{subscribeTime,jdbcType=BIGINT},
+      union_id = #{unionId,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      group_id = #{groupId,jdbcType=INTEGER},
+      subscribe_scene = #{subscribeScene,jdbcType=VARCHAR},
+      qr_scene = #{qrScene,jdbcType=VARCHAR},
+      qr_scene_str = #{qrSceneStr,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByOpenId" resultMap="BaseResultMap">
+
+    select * from wx_user_vo where open_id = #{openId,jdbcType=VARCHAR}
+  </select>
+
+
+  <delete id="deleteByOpenId">
+    delete  from wx_user_vo where open_id = #{openId,jdbcType=VARCHAR}
+  </delete>
+
+
+
+  <select id="findAll" resultMap="BaseResultMap">
+    select * from wx_user_vo
+    </select>
+</mapper>

@@ -1,4 +1,4 @@
-package com.sspu.wechart.utils;
+package com.sspu.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

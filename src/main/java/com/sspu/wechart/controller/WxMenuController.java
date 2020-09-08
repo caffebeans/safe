@@ -44,24 +44,23 @@ public class WxMenuController {
 
     @GetMapping("/create")
     public String menuCreateSample(@PathVariable String appid) throws WxErrorException, MalformedURLException {
+
+        //创建一个菜单
         WxMenu menu = new WxMenu();
+
+        //创建一个按纽，并设置它的类型
         WxMenuButton button1 = new WxMenuButton();
         button1.setType(MenuButtonType.CLICK);
-        button1.setName("今日歌曲");
-        button1.setKey("V1001_TODAY_MUSIC");
+        button1.setName("热点新闻");
+        button1.setKey("news123");
 
-//        WxMenuButton button2 = new WxMenuButton();
-//        button2.setType(WxConsts.BUTTON_MINIPROGRAM);
-//        button2.setName("小程序");
-//        button2.setAppId("wx286b93c14bbf93aa");
-//        button2.setPagePath("pages/lunar/index.html");
-//        button2.setUrl("http://mp.weixin.qq.com");
 
+        //创建第二个菜单
         WxMenuButton button3 = new WxMenuButton();
         button3.setName("菜单");
 
+        //将按钮放到菜单中
         menu.getButtons().add(button1);
-//        menu.getButtons().add(button2);
         menu.getButtons().add(button3);
 
         WxMenuButton button31 = new WxMenuButton();

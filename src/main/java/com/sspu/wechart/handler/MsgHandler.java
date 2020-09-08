@@ -1,7 +1,6 @@
 package com.sspu.wechart.handler;
 
-import com.sspu.wechart.builder.TextBuilder;
-import com.sspu.wechart.utils.JsonUtils;
+import com.sspu.utils.JsonUtils;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
@@ -43,9 +42,12 @@ public class MsgHandler extends AbstractHandler {
         }
 
         //TODO 组装回复消息
+        logger.info("我收到了你的消息！！！！！！！！！！");
+
         String content = "收到信息内容：" + JsonUtils.toJson(wxMessage);
 
-        return new TextBuilder().build(content, wxMessage, weixinService);
+        return null;
+               // new TextBuilder().build(content, wxMessage, weixinService);
 
     }
 

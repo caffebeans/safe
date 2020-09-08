@@ -1,8 +1,10 @@
 package com.sspu.controller;
 
+import com.oracle.tools.packager.Log;
 import com.sspu.model.MessageTemplate;
 import com.sspu.service.MessageTemplateService;
 import com.sspu.vo.ResultVO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +23,7 @@ import java.util.Map;
  **/
 
 @RestController
+@Slf4j
 @RequestMapping("/messageTemplate")
 public class MessageTemplateController {
 
@@ -31,6 +34,9 @@ public class MessageTemplateController {
 
     @RequestMapping("/list")
     ResultVO list(){
+
+        log.info("获取模板消息");
+        System.out.println("获取模板消息");
         ResultVO resultVO = new ResultVO();
         try{
             List<MessageTemplate> list = templateService.findByAll();

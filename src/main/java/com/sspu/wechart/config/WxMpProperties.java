@@ -1,7 +1,7 @@
 package com.sspu.wechart.config;
 
 
-import com.sspu.wechart.utils.JsonUtils;
+import com.sspu.utils.JsonUtils;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
