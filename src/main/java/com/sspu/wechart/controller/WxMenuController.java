@@ -45,6 +45,7 @@ public class WxMenuController {
     @GetMapping("/create")
     public String menuCreateSample(@PathVariable String appid) throws WxErrorException, MalformedURLException {
 
+        System.out.println("菜单");
         //创建一个菜单
         WxMenu menu = new WxMenu();
 
@@ -66,17 +67,19 @@ public class WxMenuController {
         WxMenuButton button31 = new WxMenuButton();
         button31.setType(MenuButtonType.VIEW);
         button31.setName("搜索");
-        button31.setUrl("http://www.soso.com/");
+        button31.setUrl("http://www.baidu.com/");
 
         WxMenuButton button32 = new WxMenuButton();
         button32.setType(MenuButtonType.VIEW);
         button32.setName("视频");
-        button32.setUrl("http://v.qq.com/");
+        button32.setUrl("https://www.bilibili.com/video/BV1xK4y1x7Yi");
+
+
 
         WxMenuButton button33 = new WxMenuButton();
         button33.setType(MenuButtonType.CLICK);
-        button33.setName("赞一下我们");
-        button33.setKey("V1001_GOOD");
+        button33.setName("门户网站");
+        button33.setKey("http://zhang.nat100.top/");
 
         WxMenuButton button34 = new WxMenuButton();
         button34.setType(MenuButtonType.VIEW);

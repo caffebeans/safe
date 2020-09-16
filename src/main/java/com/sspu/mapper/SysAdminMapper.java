@@ -9,7 +9,7 @@ import java.util.Map;
 @Mapper
 public interface SysAdminMapper {
 
-     SysAdmin  selectByUserNameAndPassword(Map map);
+    SysAdmin  selectByUserNameAndPassword(Map map);
 
     int deleteByPrimaryKey(Integer id);
 

@@ -32,14 +32,16 @@ public class LoginController {
    public ResultVO login(@RequestBody Map map){
 
 
-          log.info("用户后台管理登录");
+          log.info("用户后台管理登录~~~");
           ResultVO resultVO = new ResultVO();
           SysAdmin sysAdmin = sysAdminService.selectByUserNameAndPassword(map);
-          if (sysAdmin==null){
-                     resultVO.setCode(1000);
-                     resultVO.setMsg("用户或者密码不正确");
-              return resultVO;
-          }
+//          if (sysAdmin==null){
+//                     resultVO.setCode(1000);
+//                     resultVO.setMsg("用户或者密码不正确");
+//              return resultVO;
+//          }
+
+
 
            resultVO.setMsg("ok");
            resultVO.setCode(200);

@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
@@ -73,6 +75,33 @@ public class MessageTemplateController {
              resultVO.setMessage("插入失败");
              e.printStackTrace();
          }
+
+        return resultVO;
+    }
+
+    @RequestMapping("/del")
+    ResultVO del(@RequestBody Map map){
+
+
+        ResultVO resultVO = new ResultVO();
+        Date date = new Date();
+        DateFormat dateFormat = DateFormat.getDateInstance();
+        dateFormat.format(date);
+        System.out.println(map.get("id"));
+
+        try{
+
+            int i = templateService.deleteByPrimaryKey(Integer.valueOf(3));
+            if (i==1){
+                resultVO.sucesss("1");
+            }
+        }catch(Exception e){
+
+            resultVO.setData(null);
+            resultVO.setMsg("2001");
+            resultVO.setMessage("失败");
+            e.printStackTrace();
+        }
 
         return resultVO;
     }
