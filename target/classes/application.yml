@@ -1,0 +1,58 @@
+logging:
+  level:
+    org.springframework.web: INFO
+    com.github.binarywang.demo.wx.mp: DEBUG
+    me.chanjar.weixin: DEBUG
+
+#微信公众号配置
+wx:
+  mp:
+    useRedis: false
+    redisConfig:
+      host: 127.0.0.1
+      port: 6379
+    configs:
+      - appId: wx63c3aeb53a76d68b # 第一个公众号的appid
+        secret: fe335dbc1a81f23e1f8dca448f2acce4 # 公众号的appsecret
+        token: woshiyigetokenaaa123qqq # 接口配置里的Token值
+        aesKey: AgTxBmPMHhpGKclqL2Y44A9ImYBkAwBV4kiMyTFEEUS # 接口配置里的EncodingAESKey值
+
+server:
+  port: 80
+
+
+#  数据库配置
+spring:
+  datasource:
+    name: sspu-safe
+    url: jdbc:mysql://127.0.0.1:3306/sspu-safe
+    username: root
+    password: 123456
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.sspu.model  # 注意：对应实体类的路径
+
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

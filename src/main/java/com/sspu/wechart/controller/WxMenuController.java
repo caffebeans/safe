@@ -83,7 +83,7 @@ public class WxMenuController {
 
         WxMenuButton button34 = new WxMenuButton();
         button34.setType(MenuButtonType.VIEW);
-        button34.setName("获取用户信息");
+        button34.setName("学号认证");
 
         ServletRequestAttributes servletRequestAttributes =
             (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
